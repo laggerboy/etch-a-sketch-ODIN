@@ -6,21 +6,38 @@ html {
 
 body {
   text-align: center;
+  background-color: antiquewhite;
+}
+header {
+  padding: 2rem 0 1rem 0;
+  font-size: larger;
 }
 
-#btn {
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0 1rem 0;
+}
+
+button {
   margin: auto;
-  background-color: white;
-  border: 3px solid green;
+  background-color: tan;
+  border: 1px solid tan;
   border-radius: 15px;
   padding: 10px 20px 10px 20px;
-  color: green;
+  color: rgba(0, 0, 0, 0.7);
   font-weight: 900;
   width: 20%;
   margin-bottom: 10px;
 }
 
+button:hover {
+  border-color: black;
+}
+
 .container {
+  background-color: aliceblue;
   display: flex;
   flex-wrap: wrap;
   width: 880px;
@@ -34,8 +51,4 @@ body {
   height: 6.25%;
   display: flex;
   flex: 0 0 1;
-}
-
-.hover {
-  background-color: bisque;
 }

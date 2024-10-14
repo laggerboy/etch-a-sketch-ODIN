@@ -1,8 +1,11 @@
 let gridSize = 16;
-
+let opacity = 0.02;
 // create div to fill the grid
 let div = document.createElement("div");
-const btn = document.querySelector("#btn");
+const gridBtn = document.querySelector("#grid-btn");
+const resetBtn = document.querySelector("#reset-btn");
+const colorBtn = document.querySelector("#color-btn");
+const darkenBtn = document.querySelector("#darken-btn");
 
 const container = document.querySelector(".container");
 
@@ -15,11 +18,13 @@ for (let i = 0; i < gridSize * gridSize; i++) {
 container.addEventListener("mouseover", function () {
   // prevent event from firing on parent div
   if (event.target !== event.currentTarget) {
-    event.target.style.backgroundColor = ` rgb( ${rgb()}, ${rgb()}, ${rgb()})`;
+    event.target.style.backgroundColor = ` black`;
+    // event.target.style.opacity = opacity;
+    // opacity += 0.02;
   }
 });
 
-btn.addEventListener("click", function () {
+gridBtn.addEventListener("click", function () {
   gridSize = prompt("please enter the number of rows/columns");
   if (gridSize < 101) {
     container.replaceChildren();
@@ -34,6 +39,13 @@ btn.addEventListener("click", function () {
   }
 });
 
+resetBtn.addEventListener("click", function () {
+  Array.from(container.children).forEach((child) => {
+    child.style.backgroundColor = "aliceblue";
+  });
+});
+
 function rgb() {
   return Math.floor(Math.random() * 256);
 }
+// rgb( ${rgb()}, ${rgb()}, ${rgb()})
