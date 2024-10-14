@@ -15,7 +15,7 @@ for (let i = 0; i < gridSize * gridSize; i++) {
 container.addEventListener("mouseover", function () {
   // prevent event from firing on parent div
   if (event.target !== event.currentTarget) {
-    event.target.style.backgroundColor = " bisque";
+    event.target.style.backgroundColor = ` rgb( ${rgb()}, ${rgb()}, ${rgb()})`;
   }
 });
 
@@ -33,3 +33,7 @@ btn.addEventListener("click", function () {
     }
   }
 });
+
+function rgb() {
+  return Math.floor(Math.random() * 256);
+}
