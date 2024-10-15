@@ -21,7 +21,6 @@ header {
 }
 
 button {
-  margin: auto;
   background-color: tan;
   border: 1px solid tan;
   border-radius: 15px;
@@ -40,15 +39,20 @@ button:hover {
   background-color: aliceblue;
   display: flex;
   flex-wrap: wrap;
-  width: 880px;
-  height: 880px;
+  width: 800px;
+  height: 800px;
   border: 1px solid gray;
   margin: auto;
 }
 
 .container div {
+  background-color: aliceblue;
   width: 6.25%;
   height: 6.25%;
   display: flex;
   flex: 0 0 1;
+}
+
+.active {
+  opacity: 0.5;
 }
