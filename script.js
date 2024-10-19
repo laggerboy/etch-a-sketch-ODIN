@@ -57,6 +57,10 @@ resetBtn.addEventListener("click", function () {
 });
 
 colorBtn.addEventListener("click", function () {
+  Array.from(container.children).forEach((child) => {
+    child.style.backgroundColor = "aliceblue";
+    child.style.opacity = 1;
+  });
   colorBtn.classList.toggle("active");
   darkenBtn.classList.remove("active");
 });
