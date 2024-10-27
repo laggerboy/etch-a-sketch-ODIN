@@ -22,7 +22,9 @@ container.addEventListener("mouseover", function () {
   // prevent event from firing on parent div
   if (event.target !== event.currentTarget) {
     if (colorBtn.className === "active") {
-      event.target.style.backgroundColor = `rgb( ${rgb()}, ${rgb()}, ${rgb()})`;
+      if (!event.target.style.backgroundColor) {
+        event.target.style.backgroundColor = `rgb( ${rgb()}, ${rgb()}, ${rgb()})`;
+      }
     } else if (darkenBtn.className === "active") {
       if (event.target.style.backgroundColor === "aliceblue") {
         event.target.style.opacity = 0.1;
@@ -58,8 +60,8 @@ resetBtn.addEventListener("click", function () {
 
 colorBtn.addEventListener("click", function () {
   Array.from(container.children).forEach((child) => {
-    child.style.backgroundColor = "aliceblue";
-    child.style.opacity = 1;
+    child.style.backgroundColor = "";
+    child.style.opacity = "";
   });
   colorBtn.classList.toggle("active");
   darkenBtn.classList.remove("active");
@@ -80,8 +82,8 @@ function rgb() {
 
 function reset() {
   Array.from(container.children).forEach((child) => {
-    child.style.backgroundColor = "aliceblue";
-    child.style.opacity = 1;
+    child.style.backgroundColor = "";
+    child.style.opacity = "";
   });
   color = "black";
   darkenBtn.classList.remove("active");

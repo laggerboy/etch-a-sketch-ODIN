@@ -46,7 +46,7 @@ button:hover {
 }
 
 .container div {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   width: 6.25%;
   height: 6.25%;
   display: flex;
@@ -55,4 +55,8 @@ button:hover {
 
 .active {
   opacity: 0.5;
+}
+
+.default-color {
+  background-color: aliceblue;
 }
