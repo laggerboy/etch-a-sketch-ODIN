@@ -14,7 +14,7 @@ const container = document.querySelector(".container");
 
 for (let i = 0; i < gridSize * gridSize; i++) {
   let newDiv = div.cloneNode();
-
+  newDiv.classList.add("default-color");
   container.appendChild(newDiv);
 }
 
@@ -26,9 +26,12 @@ container.addEventListener("mouseover", function () {
         event.target.style.backgroundColor = `rgb( ${rgb()}, ${rgb()}, ${rgb()})`;
       }
     } else if (darkenBtn.className === "active") {
-      if (event.target.style.backgroundColor === "aliceblue") {
+      if (
+        event.target.classList.contains("default-color") &&
+        !event.target.style.backgroundColor
+      ) {
         event.target.style.opacity = 0.1;
-        event.target.style.backgroundColor = "blue";
+        event.target.style.backgroundColor = "purple";
       } else {
         event.target.style.opacity =
           parseFloat(event.target.style.opacity) + 0.1;
@@ -69,7 +72,7 @@ colorBtn.addEventListener("click", function () {
 
 darkenBtn.addEventListener("click", function () {
   Array.from(container.children).forEach((child) => {
-    child.style.backgroundColor = "aliceblue";
+    child.style.backgroundColor = "";
     child.style.opacity = 1;
   });
   darkenBtn.classList.toggle("active");
